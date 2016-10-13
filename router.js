@@ -24,7 +24,7 @@ router.route('/coords/:coords')
       return search.search_coords(coords);
     }).then(function(ary) {
       return res.json(ary);
-    });
+    }, {concurrency: 2});
   });
 
 module.exports = router;
