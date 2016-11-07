@@ -18,12 +18,19 @@ router.route('/coords/:coords')
         error: 'Uneven number of coordinates. You must supply an even number of coordinates'
       });
     }
+
+    if (coordinates.length > 500) {
+      return res.json({
+        error: 'Only 500 points allowed per request.'
+      });
+    }
+
     var pairs = helper.splitPairs(coordinates);
 
     bluebird.map(pairs, function(coords) {
       return search.search_coords(coords);
     }).then(function(ary) {
-      return res.json(ary);
+      return res.json(ary[0]);
     }, {concurrency: 2});
   });
 
