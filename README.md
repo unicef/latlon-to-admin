@@ -1,6 +1,7 @@
 ## LatLon-to-Admin
 - This is a component of [MagicBox](https://github.com/unicef/magicbox/wiki)
 - This is an api that takes latitude/longitude pairs, and returns an admin2 object
+- [download_admin_shapefiles_and_import_geojson_to_elasticsearch](https://github.com/unicef/download_admin_shapefiles_and_import_geojson_to_elasticsearch)
 - API endpoint: /api/coords/
 - example: localhost:8080/api/coords/-9.302728,-47.285156,-18.907687, 29.154968
 
